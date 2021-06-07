@@ -1,0 +1,21 @@
+JSON Web Token
+
+IMPORTANTE: Configurar tiempo de caducidad corto (1 o 2 horas)
+
+Consta de tres partes separadas por un punto:
+
+ -	HEADER: Que contiene el algoritmo de encriptacion y el tipo de token
+ -	PAYLOAD: Que contiene los datos que queremos enviar, generalmente: un id, un name y la fecha de creación
+ -	SIGNATURE(FIRMA): Contiene la parte de seguridad para asegurarnos de que el token no ha sido manipulado. Esta formado por
+					el HEADER en base64 + PAYLOAD en base64 + clave de seguridad
+ 
+ Evitar mandar información sensible com ocontraseñas ya que al estar codificado puede ser facilmente decodificado
+ 
+ 
+ Session Storage: Lo que se almacene aqui dura el tiempo de sesión, recomendado guardar aqui el JWT si tenemos un tiempo de caducidad corto
+ 
+ Local Storage: Es persistente aunque se reinicie el equipo, por lo que es recomendado guargar aqui el JWT si tenemos un tiempo de caducidad
+				largo como varias semanas.
+				
+
+OAuth2: Implementacion de Spring Security para autenticar y autorizar usuarios usando JWT

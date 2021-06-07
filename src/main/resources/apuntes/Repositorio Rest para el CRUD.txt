@@ -1,0 +1,19 @@
+1- Añadir dependencia Rest Repositories
+2- Añadir etiqueta RepositoryRestResource(path = "usuarios")
+3- A través del path se puede ir accediendo a los recursos de manera automatica
+
+ENDPOINT IMPLEMENTADOS POR DEFECTO:
+/usuarios (GET): devuelve todos los usuarios
+/usuarios/{id} (GET): devuelve el detalle del usuario con el id dado
+/usuarios (POST): añade un nuevo usuario
+/usuarios/{id} (PUT): edita el usuario con el id dado
+/usuarios/{id} (DELETE): elimina el usuario con el id dado
+
+ACCESO A QUERYS DEFINIDAS EN EL REPO:
+
+/path/search/nombreDeLaQuery EJ: /usuarios/search/findByUsername?username=admin
+NOTA: el param tiene que llamarse igual al parametro metido dentro de la query escrita en el repo
+
+con las etiquetas @RestResource y @param, podemos personalizar el path para no tener que meter el nombre de la query para acceder.
+EJ: /usuarios/search/buscar-username?nombre=admin
+

@@ -1,0 +1,29 @@
+1: Crear cliente eureka con la dependencia eureka-server
+2: Añadir esta dependencia a mano : #<dependency>
+	#<groupId>org.glassfish.jaxb</groupId>
+	#<artifactId>jaxb-runtime</artifactId>
+#</dependency>
+
+3: Añadir esta etiqueta en la clase principal: @EnableEurekaServer
+
+En los clientes:
+
+1: Añadir dependencia eureka-client
+2: Añadir esta etiqueta en la clase principal: @EnableEurekaClient
+3: Añadir esta propiedad: 
+#opcional si el servidor eureka esta en la misma maquina que el cliente
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka
+
+
+
+ZUUL-> Puerta de entrada, balanceo de carga, 
+enrutamiento dinamico de ms registrados en eureka, filtros de seguridad que se configuran aqui y sirven para todos 
+
+TIPOS DE FILTROS:
+
+	-PRE: Se ejecuta antes de que el request sea enrutado: se usa para pasar datos al request
+	-POST: Se ejecuta depues de que el request sea enrutado: se usa para modificar la respuesta
+	-ROUTE: Se ejecuta durante el enrutado de la request: se usa para la comunicacion con el microservicio
+	
+	
+FEIGN-> Para llamar a un microservicio desde otro
