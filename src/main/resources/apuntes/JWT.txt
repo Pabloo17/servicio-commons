@@ -22,7 +22,9 @@ OAuth2: Implementacion de Spring Security para autenticar y autorizar usuarios u
 
 DOCUMENTACION:https://jwt.io/
 
-PETICION POSTMAN: En authorization seleccionar "Basic" poner usuario y contraseña configuradas en el metodo configure(clients) de la clase AuthorizationServerConfig
+PETICION POSTMAN: Para obtener el token.En authorization seleccionar "Basic" poner usuario y contraseña configuradas en el metodo configure(clients) de la clase AuthorizationServerConfig
 
                   En body seleccionar "x-www-form-urlencoded" e introducir las credendiales del usuario(username y password como keys) con sus valores en bbdd sin codificar.
 				  además de un campo "grant_type" con valor "password" (configurado en el mismo método)
+				  
+				  Para las peticiones que requieran token, hay que seleccionar bearer token en authorization
