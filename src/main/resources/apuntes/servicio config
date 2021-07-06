@@ -3,3 +3,11 @@
 3: Añadir fichero {nombre del servicio}.properties ejemplo: servicio-items.properties
 4: en el servicio que queramos que lea la config de aqui, añadir dependencia spring cloud starter config
 5: en el servicio que queramos que lea la config crear fichero bootstrap.properties, que se lee antes que el application.properties y lo sobreescribe
+
+PARA ACTUALIZAR EN TIEMPO REAL LAS PROPIEDADES:
+1:Añadir etiqueta @RefreshScope en la clase que contiene el endpoint del cliente
+2:Añadir dependencia Actuator que esta en la carpeta OPS
+3:Añadir propiedad al bootstrap.properties: management.endpoints.web.exposure.include=*
+
+PARA PROBAR: llamar a actuator para que actualice los valores: localhost:8005/actuator/refresh (POST) (CREADO AUTOMATICAMENTE AL AÑADIR LAS DEPENDENCIAS)
+DESPUES VOLVER A HACER LA CONSULTA
