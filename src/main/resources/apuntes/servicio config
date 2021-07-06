@@ -1,0 +1,5 @@
+1: Crear servidor de configuracion con la dependencia spring cloud config server
+2: en la clase principal añadir la etiqueta @EnableConfigServer
+3: Añadir fichero {nombre del servicio}.properties ejemplo: servicio-items.properties
+4: en el servicio que queramos que lea la config de aqui, añadir dependencia spring cloud starter config
+5: en el servicio que queramos que lea la config crear fichero bootstrap.properties, que se lee antes que el application.properties y lo sobreescribe
