@@ -19,3 +19,5 @@ Consta de tres partes separadas por un punto:
 				
 
 OAuth2: Implementacion de Spring Security para autenticar y autorizar usuarios usando JWT
+
+DOCUMENTACION:https://jwt.io/
