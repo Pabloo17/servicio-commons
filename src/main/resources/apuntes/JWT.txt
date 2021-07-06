@@ -9,7 +9,7 @@ Consta de tres partes separadas por un punto:
  -	SIGNATURE(FIRMA): Contiene la parte de seguridad para asegurarnos de que el token no ha sido manipulado. Esta formado por
 					el HEADER en base64 + PAYLOAD en base64 + clave de seguridad
  
- Evitar mandar información sensible com ocontraseñas ya que al estar codificado puede ser facilmente decodificado
+ Evitar mandar información sensible como contraseñas ya que al estar codificado puede ser facilmente decodificado
  
  
  Session Storage: Lo que se almacene aqui dura el tiempo de sesión, recomendado guardar aqui el JWT si tenemos un tiempo de caducidad corto
@@ -21,3 +21,8 @@ Consta de tres partes separadas por un punto:
 OAuth2: Implementacion de Spring Security para autenticar y autorizar usuarios usando JWT
 
 DOCUMENTACION:https://jwt.io/
+
+PETICION POSTMAN: En authorization seleccionar "Basic" poner usuario y contraseña configuradas en el metodo configure(clients) de la clase AuthorizationServerConfig
+
+                  En body seleccionar "x-www-form-urlencoded" e introducir las credendiales del usuario(username y password como keys) con sus valores en bbdd sin codificar.
+				  además de un campo "grant_type" con valor "password" (configurado en el mismo método)
