@@ -28,3 +28,10 @@ PETICION POSTMAN: Para obtener el token.En authorization seleccionar "Basic" pon
 				  además de un campo "grant_type" con valor "password" (configurado en el mismo método)
 				  
 				  Para las peticiones que requieran token, hay que seleccionar bearer token en authorization
+				  
+PARA OBTENER REFRESH TOKEN:
+	1: Hacer una peticion normal, para obtener el token
+	2: Copiar el valor del campo refresh token
+	3: Del body eliminar las cabeceras username y password
+	4: En la cabecera grant_type poner valor refresh_token
+	5: Añadir una nueva cabecera llamada refresh_token y como valor pegar el campo refresh_token copiado anteriormente
