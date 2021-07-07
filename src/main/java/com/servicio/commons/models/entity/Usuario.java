@@ -55,4 +55,6 @@ public class Usuario implements Serializable {
   // consultas
   @ManyToMany(fetch = FetchType.LAZY)
   private List<Role> roles;
+
+  private Integer intentosLogin;
 }
