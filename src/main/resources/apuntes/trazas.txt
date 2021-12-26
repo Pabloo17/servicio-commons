@@ -1,0 +1,23 @@
+TRAZABILIDAD:
+
+
+TRACE ID: traza total, desde que se inicia la petición, hata que pasa por todos los microservicios
+SPAN ID: traza individual de cada microservicio que procesa una petición.
+
+ZIPKIN: Complementa SLEUTH, muestra la información que da este y sirve para monitorizar las trazas y almacenarlas
+
+Se puede implementar utilizando un broker de mensajería como KAFKA o RABBITMQ.
+
+PARA IMPLEMENTARLO:
+
+1: Añadir la dependencia a los microservicios que queramos monitorizar
+2: Descargar zipkin de la pagina oficial: https://zipkin.io/
+3: Ejecutar el .jar utilizando el comando java -jar
+4: Abrir el servidor en la url: http://localhost:9411/zipkin/
+5: Añadir dependencia zipkin de spring boot
+6: Añadir en el properties lo siguiente:
+	#por defecto es 0.1 (10%) la cambiamos a 1.
+	spring.sleuth.sampler.probability=1.0
+
+	#opcional, ya que por defecto es http://localhost:9411/
+	spring.zipkin.base-url=http://localhost:9411/
