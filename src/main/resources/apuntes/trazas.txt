@@ -31,7 +31,7 @@ RABBITMQ:
 2: Descargar e instalar RabbitMQ
 3: Para interfaz grafica: 
 	A - añadir carpeta sbin al path
-	B - Abrir cmd y ejecutar rabbitmq-plugins enable rabbitmq_management para habilitarla
+	B - Abrir cmd y ejecutar rabbitmq-plugins enable rabbitmq_management para habilitarla (rabbitmq-plugins disable rabbitmq_management para parar)
 	C - Ir a la url http://localhost:15672/ (user y pass:guest)
 
 4: Añadir dependencia de rabbitMq a los ms y estas propiedades en el fichero properties
