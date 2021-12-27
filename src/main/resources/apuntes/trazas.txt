@@ -21,3 +21,22 @@ PARA IMPLEMENTARLO:
 
 	#opcional, ya que por defecto es http://localhost:9411/
 	spring.zipkin.base-url=http://localhost:9411/
+
+7: Se pueden añadir tags personalizados, consultar servicio oauth
+
+
+RABBITMQ:
+
+1: Descargar lenguaje erlang
+2: Descargar e instalar RabbitMQ
+3: Para interfaz grafica: 
+	A - añadir carpeta sbin al path
+	B - Abrir cmd y ejecutar rabbitmq-plugins enable rabbitmq_management para habilitarla
+	C - Ir a la url http://localhost:15672/ (user y pass:guest)
+
+4: Añadir dependencia de rabbitMq a los ms y estas propiedades en el fichero properties
+	spring.zipkin.base-url=http://localhost:9411/
+	spring.zipkin.sender.type=rabbit
+	
+5: Para que zipkin capture los mensajes desde el broker hay que hacer un script: zipkin.cmd (en la misma carpeta del jar de zipkin)
+6: Ejecutar dicho script desde la consola (esto levanta el servidor zipkin con la configuracion para rabbit)
